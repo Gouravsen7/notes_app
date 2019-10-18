@@ -1,0 +1,6 @@
+<% @folders.each do |folder|%>
+  <ul>
+    <li><i class='fas fa-folder-open'></i> <%= folder.name%></li>
+    <%= render partial: "folders/list", locals: { folders: folder.sub_folders, notes: folder.notes } %>
+  </ul>
+<%end%>

@@ -1,0 +1,16 @@
+<% "New Notes" %>
+
+<%= form_for(@note, url: notes_path()) do |f| %>
+  
+  <div class="form-group">
+    <%= f.label :folder %>
+    <%= f.select(:folder_id, folder_for_select, { :prompt => 'Select Parent Folder'}, { class: "form-control"})  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <%= f.submit "Submit", class: 'btn btn-primary' %>
+<% end %>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NotesApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to 'Note App', root_path, class: 'navbar-brand' %>
+      </div>
+      <div class="navbar-header">
+        <%= render partial: "layouts/search_form" %>
+      </div>
+      <div id="navbar">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "New Folder", new_folder_path() %></li>
+          <li><%= link_to "New Note", new_note_path() %></li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+  <body>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
